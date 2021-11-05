@@ -7,23 +7,23 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Sistema de Monitoreo inteligente del consumo de agua} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-\posgrado{Carrera de Especialización en Sistemas Embebidos} 
-%\posgrado{Carrera de Especialización en Internet de las Cosas} 
+%\posgrado{Carrera de Especialización en Sistemas Embebidos} 
+\posgrado{Carrera de Especialización en Internet de las Cosas} 
 %\posgrado{Carrera de Especialización en Intelegencia Artificial}
 %\posgrado{Maestría en Sistemas Embebidos} 
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{Paolo Bazán Hernández} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
+\director{Por definir}
+\pertenenciaDirector{FIUBA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+\codirector{Por definir} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
@@ -38,8 +38,8 @@ codirector, % Uncomment to add a codirector to the title page
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{30 de abril de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2021} 	%Fecha de final de cursada de GdP
+\fechaINICIO{21 de octubre de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{09 de diciembre de 2021} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
 
 
@@ -68,8 +68,8 @@ codirector, % Uncomment to add a codirector to the title page
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
+0      & Creación del documento                                 & 21/10/2021 \\ \hline %\fechaInicioName \\ \hline
+1      & Se completa hasta el punto 5 inclusive                 & 04/11/2021 \\ \hline
 %2      & Se completa hasta el punto 7 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de un calefón}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de un prototipo de un sistema de control del flujo de agua de un punto de salida}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -116,24 +116,34 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
+\begin{consigna}{black} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
+
+El proyecto busca construir un sistema que permita el control del consumo de agua potable y de la detección de fugas en una red casera o empresarial de agua potable. 
+
+El trabajo propuesto se abordará con un sensor inalámbrico de caudal de agua que permita la lectura del caudal que pasa por el punto monitoreado. Los datos deberán ser enviados a través de un broker MQTT, para su almacenamiento en una base de datos. En el frente de visualización de la información, se propone la creación de aplicación que permita mostrar el flujo de agua en el punto monitoreado, así como su consumo acumulado durante un tiempo definido. 
+
+En la figura, se muestra diagrama ilustrativo de la solución
+
+
+El principal desafío del presente proyecto es la identificación del sensor que permita la correcta medición del flujo de agua. En el mercado existe disponibilidad de contadores de caudal de agua, sin embargo, son intrusivos, ya que requerirán de alterar la plomería e incorporar estos contadores. Se busca que el proyecto no sea intrusivo, para una fácil utilización. Para lograr este objetivo, se necesitará usar dispositivos que utilicen la técnica de ultrasonido, la cual existe en el mercado, aunque no de forma masiva.
+
+Somos conscientes que los contadores inteligentes de caudal de agua es una tecnología existente y que las empresas que gestionan el agua potable en las ciudades de la región irán desplegando, aunque a mediano/largo plazo, estos dispositivos en sus redes que permitan compartir la información en tiempo real con sus sistemas centrales y eventualmente, con los usuarios finales.
+
+Aun lo indicado en el párrafo anterior, la motivación del presente proyecto es poder brindar al mercado de una herramienta económica para la medición de caudal en tiempo real. Esta solución podrá estar disponible para hogares, para organizaciones o para quienes brinden servicios relacionados. Con esta se podrá conocer de forma temprana el consumo actual y detectar, basándose en comparación de consumos anteriores, fugas de agua potable.
 
 El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
 
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
+El presente proyecto se destaca especialmente por incorporar tecnología de ultrasonido, que no sea intrusiva en la red de agua potable del lugar donde se medirá. Esto lo diferencia de otros sistemas similares en que deben realizarse trabajos de plomería para incorporar contadores inteligentes.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+Este tipo de productos se encuentran en una etapa inicial dentro del ciclo de vida, ya que existen productos disponibles en el mercado, aunque no de forma masiva ni madura.
 
-\begin{itemize}
-	\item ¿Cómo se vincula este proyecto con la misión de la organización?
-	\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-	\item ¿Cuáles son las necesidades que debe satisfacer?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
+La necesidad principal a satisfacer en el mercado es la carencia de información en tiempo real que permita la rápida atención de fugas y desperdicio del agua potable en los hogares u organizaciones.
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase, se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+La innovación de este producto será la medición del caudal de agua sin ser intrusivo, así como la información oportuna para el usuario final.
+
+En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que.
+
+control de su consumo y de la detección de fugas en una red casera o empresarial de agua potable. Este control permitirá la atención y comparación de los consumos con el fin de tomar acciones correctivas ya sea con la reducción, concientización y arreglos correspondientes, si fuera el caso.
 
 %\vspace{25px}
 
