@@ -1,0 +1,591 @@
+\documentclass[
+11pt, % The default document font size, options: 10pt, 11pt, 12pt
+codirector, % Uncomment to add a codirector to the title page
+]{charter} 
+
+
+
+
+% El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
+\titulo{Sistema de monitoreo inteligente de consumo de agua} 
+
+% Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
+%\posgrado{Carrera de Especialización en Sistemas Embebidos} 
+\posgrado{Carrera de Especialización en Internet de las Cosas} 
+%\posgrado{Carrera de Especialización en Intelegencia Artificial}
+%\posgrado{Maestría en Sistemas Embebidos} 
+%\posgrado{Maestría en Internet de las cosas}
+
+% Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
+\autor{Ing. Paolo Gonzalo Bazán Hernández} 
+
+% El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
+\director{Por definir}
+\pertenenciaDirector{FIUBA} 
+% FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
+\codirector{Por definir} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+\pertenenciaCoDirector{FIUBA}
+
+% Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
+\cliente{Paolo Bazán Hernández}
+\empresaCliente{Desarrollo personal}
+
+% Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
+\juradoUno{Nombre y Apellido (1)}
+\pertenenciaJurUno{pertenencia (1)} 
+\juradoDos{Nombre y Apellido (2)}
+\pertenenciaJurDos{pertenencia (2)}
+\juradoTres{Nombre y Apellido (3)}
+\pertenenciaJurTres{pertenencia (3)}
+ 
+\fechaINICIO{21 de octubre de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{09 de diciembre de 2021} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagebreak
+
+
+\thispagestyle{empty}
+{\setlength{\parskip}{0pt}
+\tableofcontents{}
+}
+\pagebreak
+
+
+\section*{Registros de cambios}
+\label{sec:registro}
+
+
+\begin{table}[ht]
+\label{tab:registro}
+\centering
+\begin{tabularx}{\linewidth}{@{}|c|X|c|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
+0      & Creación del documento                                 & 21/10/2021 \\ \hline %\fechaInicioName \\ \hline
+1      & Se completa hasta el punto 5 inclusive                 & 04/11/2021 \\ \hline
+%2      & Se completa hasta el punto 7 inclusive
+%		  Se puede agregar algo más \newline
+%		  En distintas líneas \newline
+%		  Así                                                    & dd/mm/aaaa \\ \hline
+%3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
+%4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
+\end{tabularx}
+\end{table}
+
+\pagebreak
+
+
+
+\section*{Acta de constitución del proyecto}
+\label{sec:acta}
+
+\begin{flushright}
+Buenos Aires, \fechaInicioName
+\end{flushright}
+
+\vspace{2cm}
+
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle''. Consistirá en la implementación de un prototipo de un sistema de control del flujo de agua de un punto de salida, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y USD200, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+
+Se adjunta a esta acta la planificación inicial.
+
+\vfill
+
+% Esta parte se construye sola con la información que hayan cargado en el preámbulo del documento y no debe modificarla
+\begin{table}[ht]
+\centering
+\begin{tabular}{ccc}
+\begin{tabular}[c]{@{}c@{}}Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
+\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
+%\begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
+%\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
+\end{tabular}
+\end{table}
+
+
+
+
+\section{1. Descripción técnica-conceptual del proyecto a realizar}
+\label{sec:descripcion}
+
+
+\begin{consigna}{black} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
+
+\textbf{Situación problemática} 
+
+En un estudio llevado a cambio por el Centro de Resiliencia de Estocolmo publicado en el 2009, se identificó que el planeta Tierra tiene nueve límites, procesos o parámetros interconectados que son determinantes para mantener la estabilidad del planeta. De cruzar estos límites, se afectará el equilibrio vital con consecuencias y cambios irreversibles que pueden desencadenar el colapso de nuestra sociedad.
+
+Uno de estos parámetros, es el uso del agua dulce. Si bien la Tierra tiene mucha agua, la gran parte es salada y solo el 2.5\% es dulce. Este porcentaje es cada vez menor por el cada vez mayor uso de la agricultura, que representa el 70\% del total de agua dulce. Esta tasa va incrementándose anualmente por el crecimiento poblacional. Es indispensable promover una cultura de ahorro de este líquido vital.
+
+En las ciudades, con la complejidad de las redes urbanas de agua potable y la multiplicación de puntos de agua, también se incrementan las fugas por agrietamiento o rotura de las tuberías. Ante eventos de esta naturaleza, dependiendo de su magnitud de la fuga, si se tratara por ejemplo, de la rotura de la tubería alimentadora de una casa, la inundación será advertida rápidamente por sus residentes. Sin embargo, si las fugas fueran ligeras, será difícil tener una detección temprana. Por lo tanto, las acciones correctivas tomarán tiempo en ejecutarse.
+
+Para un mejor entendimiento, en el siguiente gráfico se puede identificar la cantidad de agua que se podría desperdiciar en un hogar que tuviera un solo punto de agua defectuoso, que desperdicie 30 gotas por minuto. Este ritmo podría pasar inadvertido por el propietario, pero sí logrará que se arroje alrededor de 1041 galones de agua al año o su equivalente de 3650 litros.
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.8\textwidth]{./Figuras/consumoAgua.png}
+\caption{Cálculo estimado de pérdida de agua en un hogar}
+\label{fig:consumoAgua}
+\end{figure}
+
+La necesidad principal a satisfacer en el mercado es la carencia de información en tiempo real que permita la rápida atención de fugas y desperdicio del agua potable en los hogares u organizaciones.
+
+
+\textbf{Descripción técnica/conceptual del proyecto a realizar} 
+
+El proyecto busca construir un sistema que permita el control del consumo de agua potable y la detección de fugas en redes caseras o empresariales de agua potable. 
+
+El trabajo propuesto se abordará con un sensor inalámbrico de caudal de agua que permita la lectura del caudal que pasa por el punto monitoreado. Los datos deberán ser enviados a través del protocolo MQTT para su almacenamiento en una base de datos. En el frente de visualización de la información, se propone la creación de una aplicación que permita mostrar el flujo de agua en el punto monitoreado, así como su consumo acumulado durante un tiempo definido. 
+
+El principal desafío del presente proyecto es la identificación del sensor que permita la correcta medición del flujo de agua. En el mercado existe disponibilidad de contadores de caudal de agua. Sin embargo, se trata de sensores intrusivos, ya que requieren alterar la plomería para incorporarlos. Se busca que el proyecto no sea intrusivo para una fácil utilización. Para lograr este objetivo, se necesitará usar dispositivos que utilicen la técnica de ultrasonido, que si bien existen en el mercado, no lo hace de forma masiva.
+
+Los contadores inteligentes de caudal de agua poseen tecnología madura que las empresas que gestionan el agua potable en las ciudades, como AySA, irán desplegando paulatinamente. A mediano/largo plazo, estos dispositivos enviarán la información en tiempo real a sus sistemas centrales y eventualmente, se compartirá con los usuarios finales.
+
+La motivación del presente proyecto es poder brindar al mercado una herramienta económica para la medición de caudal en tiempo real. Esta solución podrá estar disponible para hogares, organizaciones o para quienes brinden servicios relacionados. Se podrá conocer de forma temprana el consumo actual y detectar, basándose en comparación de consumos anteriores, fugas de agua potable.
+
+En la Figura \ref{fig:diagHLSolucion} se presenta el diagrama a alto nivel de la solución.
+
+
+%\vspace{25px}
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.8\textwidth]{./Figuras/diagHLSolucion.png} 
+\caption{Diagrama a alto nivel de la solución}
+\label{fig:diagHLSolucion}
+\end{figure}
+
+\vspace{25px}
+
+\end{consigna}
+
+
+\section{2. Identificación y análisis de los interesados}
+\label{sec:interesados}
+
+\begin{consigna}{black} 
+
+\begin{table}[ht]
+%\caption{Identificación de los interesados}
+%\label{tab:interesados}
+\begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+
+Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
+Cliente       & Por definir       & FIUBA			& Director 	\\ \hline
+Responsable   & \authorname       & \empclientename & Alumno 	\\ \hline
+Orientador    & Por definir       & \pertesupname 	& Co-director  \\ \hline
+
+\end{tabularx}
+\end{table}
+
+ 
+\begin{itemize}
+	\item \textbf{Orientador:} Posee conocimiento y experiencia en soluciones IoT que ayudarán para la correcta orientación técnica para el proyecto.
+\end{itemize}
+
+\end{consigna}
+
+
+
+\section{3. Propósito del proyecto}
+\label{sec:proposito}
+
+\begin{consigna}{black}
+El propósito de este proyecto es mejorar el conocimiento sobre sensorización de caudal de fluidos, específicamente de agua. Se busca ampliar el conocimiento en la integración de los componentes de medición, protocolos de comunicación y servicios de software que pongan en valor la información sobre el consumo de agua potable.
+\end{consigna}
+
+\section{4. Alcance del proyecto}
+\label{sec:alcance}
+
+\begin{consigna}{red}
+¿Qué se incluye y que no se incluye en este proyecto?
+
+Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
+
+Explicitar todo lo quede comprendido dentro del alcance del proyecto.
+
+Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+
+\end{consigna}
+
+
+\section{5. Supuestos del proyecto}
+\label{sec:supuestos}
+
+\begin{consigna}{red}
+``Para el desarrollo del presente proyecto se supone que: ...''
+
+\begin{itemize}
+	\item Supuesto 1
+	\item Supuesto 2...
+\end{itemize}
+
+Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
+\end{consigna}
+
+\section{6. Requerimientos}
+\label{sec:requerimientos}
+
+\begin{consigna}{red}
+Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
+
+\begin{enumerate}
+	\item Requerimientos funcionales
+		\begin{enumerate}
+			\item El sistema debe...
+			\item Tal componente debe...
+			\item El usuario debe poder...
+		\end{enumerate}
+	\item Requerimientos de documentación
+		\begin{enumerate}
+			\item Requerimiento 1
+			\item Requerimiento 2 (prioridad menor)
+		\end{enumerate}
+	\item Requerimiento de testing...
+	\item Requerimientos de la interfaz...
+	\item Requerimientos interoperabilidad...
+	\item etc...
+\end{enumerate}
+
+Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
+
+Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
+
+No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
+
+Y al escribirlos seguir las siguientes reglas:
+\begin{itemize}
+	\item Ser breve y conciso (nadie lee cosas largas). 
+	\item Ser específico: no dejar lugar a confusiones.
+	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
+\end{itemize}
+
+\end{consigna}
+
+\section{7. Historias de usuarios (\textit{Product backlog})}
+\label{sec:backlog}
+
+\begin{consigna}{red}
+Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+
+El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
+
+Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
+\end{consigna}
+
+\section{8. Entregables principales del proyecto}
+\label{sec:entregables}
+
+\begin{consigna}{red}
+
+Los entregables del proyecto son (ejemplo):
+
+\begin{itemize}
+	\item Manual de uso
+	\item Diagrama de circuitos esquemáticos
+	\item Código fuente del firmware
+	\item Diagrama de instalación
+	\item Informe final
+	\item etc...
+\end{itemize}
+
+\end{consigna}
+
+\section{9. Desglose del trabajo en tareas}
+\label{sec:wbs}
+
+\begin{consigna}{red}
+El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
+
+\begin{enumerate}
+\item Grupo de tareas 1
+	\begin{enumerate}
+	\item Tarea 1 (tantas hs)
+	\item Tarea 2 (tantas hs)
+	\item Tarea 3 (tantas hs)
+	\end{enumerate}
+\item Grupo de tareas 2
+	\begin{enumerate}
+	\item Tarea 1 (tantas hs)
+	\item Tarea 2 (tantas hs)
+	\item Tarea 3 (tantas hs)
+	\end{enumerate}
+\item Grupo de tareas 3
+	\begin{enumerate}
+	\item Tarea 1 (tantas hs)
+	\item Tarea 2 (tantas hs)
+	\item Tarea 3 (tantas hs)
+	\item Tarea 4 (tantas hs)
+	\item Tarea 5 (tantas hs)
+	\end{enumerate}
+\end{enumerate}
+
+Cantidad total de horas: (tantas hs)
+
+Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
+
+\end{consigna}
+
+\section{10. Diagrama de Activity On Node}
+\label{sec:AoN}
+
+\begin{consigna}{red}
+Armar el AoN a partir del WBS definido en la etapa anterior. 
+
+%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
+
+%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
+
+\end{consigna}
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+\caption{Diagrama en \textit{Activity on Node}}
+\label{fig:AoN}
+\end{figure}
+
+Indicar claramente en qué unidades están expresados los tiempos.
+De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
+Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
+
+
+
+\section{11. Diagrama de Gantt}
+\label{sec:gantt}
+
+\begin{consigna}{red}
+
+Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre los cuales destacamos:
+
+\begin{itemize}
+\item Planner
+\item GanttProject
+\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
+\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
+\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
+\end{itemize}
+
+Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
+Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
+
+Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
+Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
+Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
+
+En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{ganttchart}{1}{12}
+  \gantttitle{2020}{12} \\
+  \gantttitlelist{1,...,12}{1} \\
+  \ganttgroup{Group 1}{1}{7} \\
+  \ganttbar{Task 1}{1}{2} \\
+  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
+  \ganttmilestone{Milestone o hito}{7} \ganttnewline
+  \ganttbar{Final Task}{8}{12}
+  \ganttlink{elem2}{elem3}
+  \ganttlink{elem3}{elem4}
+\end{ganttchart}
+\end{center}
+\caption{Diagrama de gantt de ejemplo}
+\label{fig:gantt}
+\end{figure}
+
+
+\begin{landscape}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
+\caption{Ejemplo de diagrama de Gantt rotado}
+\label{fig:diagGantt}
+\end{figure}
+
+\end{landscape}
+
+\end{consigna}
+
+
+\section{12. Presupuesto detallado del proyecto}
+\label{sec:presupuesto}
+
+\begin{consigna}{red}
+Si el proyecto es complejo entonces separarlo en partes:
+\begin{itemize}
+	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
+	\item El desglose detallado del subtotal de cada una de las áreas.
+\end{itemize}
+
+IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
+
+\end{consigna}
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+Descripción &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+ &
+  \multicolumn{1}{c|}{} &
+  \multicolumn{1}{c|}{} &
+  \multicolumn{1}{c|}{} \\ \hline
+ &
+  \multicolumn{1}{c|}{} &
+  \multicolumn{1}{c|}{} &
+  \multicolumn{1}{c|}{} \\ \hline
+\multicolumn{1}{|l|}{} &
+   &
+   &
+   \\ \hline
+\multicolumn{1}{|l|}{} &
+   &
+   &
+   \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} &
+  \multicolumn{1}{c|}{} \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+Descripción &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+\multicolumn{1}{|l|}{} &
+   &
+   &
+   \\ \hline
+\multicolumn{1}{|l|}{} &
+   &
+   &
+   \\ \hline
+\multicolumn{1}{|l|}{} &
+   &
+   &
+   \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} &
+  \multicolumn{1}{c|}{} \\ \hline
+\rowcolor[HTML]{C0C0C0}
+\multicolumn{3}{|c|}{TOTAL} &
+   \\ \hline
+\end{tabularx}%
+\end{table}
+
+
+\section{13. Gestión de riesgos}
+\label{sec:riesgos}
+
+\begin{consigna}{red}
+a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+ 
+Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+\begin{itemize}
+	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
+	Justificar el motivo por el cual se asigna determinado número de severidad (S).
+	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
+	Justificar el motivo por el cual se asigna determinado número de (O). 
+\end{itemize}   
+
+Riesgo 2:
+\begin{itemize}
+	\item Severidad (S): 
+	\item Ocurrencia (O):
+\end{itemize}
+
+Riesgo 3:
+\begin{itemize}
+	\item Severidad (S): 
+	\item Ocurrencia (O):
+\end{itemize}
+
+
+b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
+       &   &   &     &    &    &      \\ \hline
+       &   &   &     &    &    &      \\ \hline
+       &   &   &     &    &    &      \\ \hline
+       &   &   &     &    &    &      \\ \hline
+       &   &   &     &    &    &      \\ \hline
+\end{tabularx}%
+\end{table}
+
+Criterio adoptado: 
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+
+Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
+
+c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
+ 
+Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+  Nueva asignación de S y O, con su respectiva justificación:
+  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
+          Justificar el motivo por el cual se asigna determinado número de severidad (S).
+  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
+          Justificar el motivo por el cual se asigna determinado número de (O).
+
+Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+ 
+Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+
+\end{consigna}
+
+
+\section{14. Gestión de la calidad}
+\label{sec:calidad}
+
+\begin{consigna}{red}
+Para cada uno de los requerimientos del proyecto indique:
+\begin{itemize} 
+\item Req \#1: copiar acá el requerimiento.
+
+\begin{itemize}
+	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
+	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
+\end{itemize}
+
+\end{itemize}
+
+Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
+
+\end{consigna}
+
+\section{15. Procesos de cierre}    
+\label{sec:cierre}
+
+\begin{consigna}{red}
+Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+
+\begin{itemize}
+	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
+	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
+	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
+	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
+	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
+	  - Indicar esto y quién financiará los gastos correspondientes.
+\end{itemize}
+
+\end{consigna}
+
+
+\end{document}
