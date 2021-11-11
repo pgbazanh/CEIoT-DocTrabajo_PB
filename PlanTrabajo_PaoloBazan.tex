@@ -27,8 +27,8 @@ codirector, % Uncomment to add a codirector to the title page
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Paolo Bazán Hernández}
-\empresaCliente{Desarrollo personal}
+\cliente{Marleny López Machuca}
+\empresaCliente{Cliente particular}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -69,8 +69,8 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 & 21/10/2021 \\ \hline %\fechaInicioName \\ \hline
-1      & Se completa hasta el punto 5 inclusive                 & 04/11/2021 \\ \hline
-%2      & Se completa hasta el punto 7 inclusive
+1      & Se completa hasta el punto 2 inclusive                 & 04/11/2021 \\ \hline
+2      & Se completa hasta el punto 9 inclusive y correcciones de rev.1	& 11/11/2021 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle''. Consistirá en la implementación de un prototipo de un sistema de control del flujo de agua de un punto de salida, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y USD200, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle''. Consistirá en la implementación de un prototipo de un sistema de control del flujo de agua de un punto de salida, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y USD8200, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -180,16 +180,18 @@ En la Figura \ref{fig:diagHLSolucion} se presenta el diagrama a alto nivel de la
 \rowcolor[HTML]{C0C0C0} 
 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Cliente       & Por definir       & FIUBA			& Director 	\\ \hline
-Responsable   & \authorname       & \empclientename & Alumno 	\\ \hline
-Orientador    & Por definir       & \pertesupname 	& Co-director  \\ \hline
+Cliente       & Marleny López Machuca & Cliente particular	& -- 	\\ \hline
+Responsable   & \authorname       & FIUBA 			& Alumno 	\\ \hline
+Orientador    & Por definir       & Por definir  	& Director  \\ \hline %\pertesupname
+Colaborador   & Por definir       & Por definir     & Co-director \\ \hline
 
 \end{tabularx}
 \end{table}
 
  
 \begin{itemize}
-	\item \textbf{Orientador:} Posee conocimiento y experiencia en soluciones IoT que ayudarán para la correcta orientación técnica para el proyecto.
+	\item \textbf{Orientador:} Posee conocimiento y experiencia en soluciones TI que ayudará en la estrategia y definición de los objetivos del proyecto. Cuenta con escaso tiempo disponible. Se deberán planificar reuniones con anticipación de 15 días.
+	\item \textbf{Colaborador:} Posee conocimiento y experiencia en soluciones IoT que ayudará en los conceptos y aspectos técnicos del proyecto. Cuenta con escaso tiempo disponible. Se deberán planificar reuniones con anticipación de 15 días.
 \end{itemize}
 
 \end{consigna}
@@ -206,14 +208,39 @@ El propósito de este proyecto es mejorar el conocimiento sobre sensorización d
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+\begin{consigna}{black}
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
+El proyecto de trabajo final del CEIoT tendrá como alcance lo siguiente:
 
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
+\begin{enumerate}
+\item Diseño, identificación e implementación de prototipo de solución de telemetría, para medición de caudal de agua en una tubería residencial
+\begin{itemize}
+	\item Basada en utilización de sensores de medición de caudal de agua con tecnología ultrasónica
+	\item Los sensores no serán instalados "en línea" en la tubería o cañería. Serán instalados de forma no intrusiva, sin intervenirla.
+	\item La comunicación hacia la solución de software será inalámbrica, utilizando preferentemente protocolo Wi-Fi
+\end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+\item Diseño y construcción de solución de software para la captura y procesamiento de datos
+\begin{itemize}
+	\item Basada en tecnología de contenedores
+	\item Utilización de base de datos relacional
+\end{itemize}
+
+\item Diseño y construcción de solución de software front-end para la presentación de datos en tiempo real y de forma histórica
+\begin{itemize}
+	\item Basado en lenguaje typescript
+\end{itemize}
+
+\end{enumerate}
+
+El presente proyecto no incluye:
+
+\begin{itemize}
+	\item Detección de caudal de otro tipo de fluidos
+	\item Inclusión de servicios de nube
+	\item Gestión de analítica de datos
+\end{itemize}
+
 
 \end{consigna}
 
@@ -221,53 +248,55 @@ Explicitar además todo lo que no quede incluido (``El presente proyecto no incl
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+\begin{consigna}{black}
+Para el desarrollo del presente proyecto se supone que: 
 
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item Se dispondrá de tiempo suficiente para el cumplimiento de los objetivos y entregables
+	\item Se dispondrá de recursos económicos para la adquición de materiales necesarios para la construcción del prototipo y software asociado
+	\item Se dispondrá de orientación oportuna por parte de todos los involucrados de acuerdo a su rol
+	\item Se asume niveles de precisión aceptables en la tecnología de los dispositivos de telemetría elegida
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
 \end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
+\begin{consigna}{black}
+Los requerimientos del proyecto serán listados de acuerdo al siguiente criterio:
+\begin{itemize}
+	\item Su clasificación será: funcionales y no funcionales.
+	\item La prioridad de los requerimientos se listan de mayor a menor.
+	\item El cumplimiento de estos requerimientos es mandatorio, salvo se especifique si fuera opcional.
+\end{itemize}
 
 \begin{enumerate}
-	\item Requerimientos funcionales
-		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
-		\end{enumerate}
-	\item Requerimientos de documentación
-		\begin{enumerate}
-			\item Requerimiento 1
-			\item Requerimiento 2 (prioridad menor)
-		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
+\item Requerimientos Funcionales
+
+	\begin{enumerate}
+		\item Conexión de los dispositivos debe ser de forma inalámbrica.
+		\item Dispositivos de medición de caudal de agua deberán usar tecnología ultrasónica
+		\item Solución debe ser atender primariamente las salidas de agua de servicios higiénicos y/o de tuberías de hasta 1".
+		\item La transmisión de datos debe ser ligera y debe consumir baja energía. 
+		\item Solución debe contar con documentación de cobertura de señal. 
+		\item Solución debe incluir documentación con estudio de parámetros para medición de caudal de agua usando sensores ultrasónicos.
+		\item Software embebido debe poder encapsularse en un contenedor docker.
+		\item Aplicativo web debe mostrar caudal de agua de cada sensor en tiempo real. 
+		\item Aplicativo web debe mostrar caudal histórico de cada sensor y promedio de los últimos 7 días.
+		\item Solución debe incluir notificaciones que permitan alertar a usuarios de alteración del caudal habitual, superior al 10\% al promedio histórico.		
+		\item Opcionalmente, solución debe tener capacidad portátil para conexión de datos, alimentación eléctrica e instalación de plomería.
+	\end{enumerate}
+
+\item Requerimientos No Funcionales
+	\begin{enumerate}
+		\item Adecuación a lineamientos establecidos en la ISO 30141:2018.
+		\item Los sensores deberán conectarse a una red de forma predeterminada.
+		\item Encriptación de credenciales de conexión y de datos alojados en los componentes de la solución.
+		\item Configuración de control de accesos disponible
+	\end{enumerate}
+
 \end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
 
 \end{consigna}
 
