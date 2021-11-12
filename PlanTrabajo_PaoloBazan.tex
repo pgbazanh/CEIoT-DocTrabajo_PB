@@ -69,7 +69,7 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 & 21/10/2021 \\ \hline %\fechaInicioName \\ \hline
-1      & Se completa hasta el punto 2 inclusive                 & 04/11/2021 \\ \hline
+1      & Se completa hasta el punto 1 inclusive                 & 04/11/2021 \\ \hline
 2      & Se completa hasta el punto 9 inclusive y correcciones de rev.1	& 11/11/2021 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -282,6 +282,7 @@ Los requerimientos del proyecto serán listados de acuerdo al siguiente criterio
 		\item Solución debe contar con documentación de cobertura de señal. 
 		\item Solución debe incluir documentación con estudio de parámetros para medición de caudal de agua usando sensores ultrasónicos.
 		\item Software embebido debe poder encapsularse en un contenedor docker.
+		\item Aplicativo web debe permitir registro de ubicación del sensor y asociarla con la colección de datos.
 		\item Aplicativo web debe mostrar caudal de agua de cada sensor en tiempo real. 
 		\item Aplicativo web debe mostrar caudal histórico de cada sensor y promedio de los últimos 7 días.
 		\item Solución debe incluir notificaciones que permitan alertar a usuarios de alteración del caudal habitual, superior al 10\% al promedio histórico.		
@@ -292,8 +293,8 @@ Los requerimientos del proyecto serán listados de acuerdo al siguiente criterio
 	\begin{enumerate}
 		\item Adecuación a lineamientos establecidos en la ISO 30141:2018.
 		\item Los sensores deberán conectarse a una red de forma predeterminada.
-		\item Encriptación de credenciales de conexión y de datos alojados en los componentes de la solución.
-		\item Configuración de control de accesos disponible
+		\item Activación de configuraciones de seguridad disponibles en los componentes de la solución.
+		\item Opcionalmente, solución podrá tener control de accesos configurable.
 	\end{enumerate}
 
 \end{enumerate}
@@ -303,28 +304,104 @@ Los requerimientos del proyecto serán listados de acuerdo al siguiente criterio
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+\begin{consigna}{black}
+A continuación se listas las historias de usuario y su ponderación, que es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo. Está basada en la serie de Fibonacci.
 
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
+Los criterios para la ponderación son los siguientes:
 
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
+\begin{table}[ht]
+\label{tab:haUsuarioPesos}
+\centering
+\begin{tabularx}{\linewidth}{@{}|c|X|c|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+\# & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Criterio} 	& Peso      \\ \hline
+1      & \textbf{Dificultad de trabajo a realizar}          	&  \\ \hline 
+      	& Bajo                 								&  1 \\ \hline
+       	& Medio                								&  3 \\ \hline
+      	& Alto                 								&  5 \\ \hline
+2      & \textbf{Complejidad de trabajo a realizar}        	&  \\ \hline 
+      	& Bajo                 								&  1 \\ \hline
+       	& Medio                								&  5 \\ \hline
+      	& Alto                 								& 13 \\ \hline
+2      & \textbf{Riesgo-incertidumbre de trabajo a realizar}        	&  \\ \hline 
+      	& Bajo                 								&  1 \\ \hline
+       	& Medio                								&  5 \\ \hline
+      	& Alto                 								& 13 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+Las historias de usuario son las siguientes:
+
+\begin{enumerate}
+\item Como cliente quiero que la medición del caudal sea lo más precisa posible, para tener confianza en la solución y compararla con mediciones de la empresa de suministro de agua
+	\begin{itemize}
+		\item Dificultad	:  5
+		\item Complejidad	:  8
+		\item Riesgo		: 13
+		\item Total			: 26
+		\item \textbf{\textit{Story Points	:} 34} 		
+	\end{itemize}
+
+\item Como cliente quiero que la aplicación web sea responsiva, para que sea usada desde computadoras y móviles
+	\begin{itemize}
+		\item Dificultad	:  3
+		\item Complejidad	:  8
+		\item Riesgo		:  5
+		\item Total			: 16
+		\item \textbf{\textit{Story Points	:} 21}		
+	\end{itemize}
+
+\item Como cliente deseo que la solución proporcione información histórica por ubicación del sensor, para comparación con consumos pasados
+	\begin{itemize}
+		\item Dificultad	:  4
+		\item Complejidad	: 10
+		\item Riesgo		:  7
+		\item Total			: 21
+		\item \textbf{\textit{Story Points	:} 21}		
+	\end{itemize}
+
+\item Como cliente deseo que la solución notifique ante alteración de patrón de consumo desviado en un 10\% mayor con respecto al consumo histórico, para tener una alerta oportuna de posibles fugas.
+	\begin{itemize}
+		\item Dificultad	:  5
+		\item Complejidad	: 15
+		\item Riesgo		: 10
+		\item Total			: 30
+		\item \textbf{\textit{Story Points	:} 34}		
+	\end{itemize}
+	
+\item Como cliente deseo que la solución sea portátil, para poder moverla en distintos ambientes 
+	\begin{itemize}
+		\item Dificultad	:  4
+		\item Complejidad	:  5
+		\item Riesgo		: 13
+		\item Total			: 24
+		\item \textbf{\textit{Story Points	:} 34}		
+	\end{itemize}
+\end{enumerate}
+
 \end{consigna}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
+\begin{consigna}{black}
 
-Los entregables del proyecto son (ejemplo):
+Los entregables del proyecto son:
 
 \begin{itemize}
-	\item Manual de uso
-	\item Diagrama de circuitos esquemáticos
-	\item Código fuente del firmware
-	\item Diagrama de instalación
-	\item Informe final
-	\item etc...
+	\item Prototipo final de solución
+	\item Aplicación web implementada
+	\item Documentación del proyecto 
+	\begin{itemize}
+		\item Diagrama de arquitectura de solución
+		\item Diagrama de circuitos esquemáticos
+		\item Código fuente del software
+		\item Diagrama de instalación
+		\item Memoria técnica final
+	\end{itemize}
+	
 \end{itemize}
 
 \end{consigna}
@@ -332,35 +409,53 @@ Los entregables del proyecto son (ejemplo):
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
+\begin{consigna}{black}
 
 \begin{enumerate}
-\item Grupo de tareas 1
+\item \textbf{Planificación del proyecto: 40 hs}
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Elaboración del plan de proyecto (20 hs)
+	\item Análisis de factibilidad (10 hs)
+	\item Validaciones de calidad (10 hs)
 	\end{enumerate}
-\item Grupo de tareas 2
+\item \textbf{Investigación inicial: 60 hs}
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Investigación sobre sensores de medición de flujo de agua con tecnología ultrasónica (30 hs)
+	\item Indagación sobre nivel de programación de sensores identificados (20 hs)
+	\item Proceso de adquisición de sensores (10 hs)
 	\end{enumerate}
-\item Grupo de tareas 3
+\item \textbf{Diseño de arquitectura de solución: 60 hs}
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\item Tarea 4 (tantas hs)
-	\item Tarea 5 (tantas hs)
+	\item Arquitectura tecnológica (15 hs)
+	\item Arquitectura de aplicación (20 hs)
+	\item Arquitectura de integración (10 hs)
+	\item Arquitectura de datos (15 hs)
+	\end{enumerate}
+\item \textbf{Desarrollo de aplicación web: 150 hs}
+	\begin{enumerate}
+	\item Desarrollo front end (50 hs)
+	\item Desarrollo back end (60 hs)
+	\item Pruebas de aplicaciones (30 hs)
+	\item Habilitación de infraestructura (10 hs)
+	\end{enumerate}
+\item \textbf{Desarrollo de sistema embebido: 180 hs}
+	\begin{enumerate}
+	\item Desarrollo de algoritmo de medición de caudal de agua (50 hs)
+	\item Desarrollo de algoritmo de comunicaciones (40 hs)
+	\item Desarrollo de algoritmo de manejo de datos (40 hs)
+	\item Encapsulamiento de aplicación en contenedores (20 hs)
+	\item Corrección de errores (30 hr)
+	\end{enumerate}
+\item \textbf{Elaboración de documentación: 120 hs}
+	\begin{enumerate}
+	\item Confección de memoria técnica (60 hs)
+	\item Informes de avance (20 hs)
+	\item Presentación de defensa (20 hs)
+	\item Encapsulamiento de aplicación en contenedores (20 hs)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (tantas hs)
-
-Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
+\textbf{Cantidad total de horas: 610 hs}
 
 \end{consigna}
 
