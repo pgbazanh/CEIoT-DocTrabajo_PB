@@ -93,7 +93,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle''. Consistirá en la implementación de un prototipo de un sistema de control del flujo de agua de un punto de salida, y tendrá un presupuesto preliminar estimado de 630 hs de trabajo y USD 8200, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle''. Consistirá en la implementación de un prototipo de un sistema de control del flujo de agua de un punto de salida, y tendrá un presupuesto preliminar estimado de 660 hs de trabajo y USD 8208, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -460,10 +460,10 @@ Los entregables del proyecto son:
 	\item Encapsulamiento de aplicación en contenedores (20 hs).
 	\item Pruebas unitarias de sistema embebido en dispositivo de telemetría (40 hs).
 	\end{enumerate}
-\item \textbf{Integración y pruebas integrales: 70 hs}
+\item \textbf{Integración y pruebas integrales: 100 hs}
 	\begin{enumerate}
 	\item Integración de componentes (40 hs).
-	\item Pruebas integrales de sistema y corrección de errores (30 hs).
+	\item Pruebas integrales de sistema y corrección de errores (60 hs).
 	\end{enumerate}
 \item \textbf{Elaboración de documentación: 100 hs}
 	\begin{enumerate}
@@ -473,7 +473,7 @@ Los entregables del proyecto son:
 	\end{enumerate}
 \end{enumerate}
 
-\textbf{Cantidad total de horas: 630 hs}
+\textbf{Cantidad total de horas: 660 hs}
 
 \end{consigna}
 
@@ -511,51 +511,46 @@ Las unidades mostradas en la gráfica están expresadas en \textbf{horas}.
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-\begin{consigna}{red}
+\begin{consigna}{black}
 
-Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre los cuales destacamos:
+A continuación se listan las actividades con las fechas de inicio y fin establecidas para el proyecto. Se tienen en cuenta las siguientes consideraciones:
 
 \begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
+		\item La asignación de un (01) recurso de tipo desarrollador.
+		\item El trabajo diario será de tres (03) horas por seis (06) días por semana.
+		\item Vacaciones desde el 15 de diciembre de 2021 al 28 de febrero de 2022 y desde el 11 al 22 de julio de 2022.
+	\end{itemize}
 
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
 
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
+\includegraphics[scale=.7]{./Figuras/TF-gantt-lista.png} 
 
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
+En la figura \ref{fig:diagGantt}, se muestra el de diagrama de gantt realizado para el proyecto.
+%con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
 
-\begin{figure}[htbp]
-\begin{center}
-\begin{ganttchart}{1}{12}
-  \gantttitle{2020}{12} \\
-  \gantttitlelist{1,...,12}{1} \\
-  \ganttgroup{Group 1}{1}{7} \\
-  \ganttbar{Task 1}{1}{2} \\
-  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-  \ganttbar{Final Task}{8}{12}
-  \ganttlink{elem2}{elem3}
-  \ganttlink{elem3}{elem4}
-\end{ganttchart}
-\end{center}
-\caption{Diagrama de gantt de ejemplo}
-\label{fig:gantt}
-\end{figure}
+%\begin{figure}[htbp]
+%\begin{center}
+%\begin{ganttchart}{1}{12}
+%  \gantttitle{2020}{12} \\
+%  \gantttitlelist{1,...,12}{1} \\
+%  \ganttgroup{Group 1}{1}{7} \\
+%  \ganttbar{Task 1}{1}{2} \\
+%  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
+%  \ganttmilestone{Milestone o hito}{7} \ganttnewline
+%  \ganttbar{Final Task}{8}{12}
+%  \ganttlink{elem2}{elem3}
+%  \ganttlink{elem3}{elem4}
+%\end{ganttchart}
+%\end{center}
+%\caption{Diagrama de gantt de ejemplo}
+%\label{fig:gantt}
+%\end{figure}
 
 
 \begin{landscape}
 \begin{figure}[htpb]
 \centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt rotado}
+\includegraphics[height=.85\textheight]{./Figuras/TF-gantt.png}
+\caption{Diagrama de Gantt}
 \label{fig:diagGantt}
 \end{figure}
 
@@ -567,14 +562,8 @@ En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realiza
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
+\begin{consigna}{black}
+Se presenta el presupuesto del proyecto. Está expresado en dólares americanos (USD).
 
 \end{consigna}
 
@@ -589,24 +578,22 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+\multicolumn{1}{|l|}{Servicios de ingeniería} & 660 hs
+   & 10.00
+   & 6600.00
    \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+\multicolumn{1}{|l|}{Sensor de caudal de agua ultrasónico} & 01 un
+   & 110.00
+   & 110.00
    \\ \hline
+\multicolumn{1}{|l|}{Unidad de cómputo Raspberry Pi} & 01 un
+   & 130.00
+   & 130.00
+   \\ \hline
+
+
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{r|}{6840.00} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -614,22 +601,15 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+\multicolumn{1}{|l|}{20\% de costo directo} & 01
+   & 1368.00
+   & 1368.00
    \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{r|}{1368.00} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
+\multicolumn{3}{|r|}{TOTAL} & 8208.00
    \\ \hline
 \end{tabularx}%
 \end{table}
