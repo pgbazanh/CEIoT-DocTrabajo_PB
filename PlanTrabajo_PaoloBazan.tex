@@ -20,10 +20,10 @@ codirector, % Uncomment to add a codirector to the title page
 \autor{Ing. Paolo Gonzalo Bazán Hernández} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Por definir}
+\director{Mg. Ing. José Antonio Espinoza Aldave}
 \pertenenciaDirector{FIUBA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{Por definir} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+\codirector{Ing. Ricardo Valega Márquez} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
@@ -40,7 +40,7 @@ codirector, % Uncomment to add a codirector to the title page
  
 \fechaINICIO{21 de octubre de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{09 de diciembre de 2021} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{15 de octubre de 2022}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -71,6 +71,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 0      & Creación del documento                                 & 21/10/2021 \\ \hline %\fechaInicioName \\ \hline
 1      & Se completa hasta el punto 1 inclusive                 & 04/11/2021 \\ \hline
 2      & Se completa hasta el punto 9 inclusive y correcciones de rev.1	& 11/11/2021 \\ \hline
+3      & Se completa hasta el punto 12 inclusive y correcciones de rev.2	& 21/11/2021 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
@@ -92,7 +93,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle''. Consistirá en la implementación de un prototipo de un sistema de control del flujo de agua de un punto de salida, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y USD 8200, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle''. Consistirá en la implementación de un prototipo de un sistema de control del flujo de agua de un punto de salida, y tendrá un presupuesto preliminar estimado de 630 hs de trabajo y USD 8200, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -103,7 +104,8 @@ Se adjunta a esta acta la planificación inicial.
 \centering
 \begin{tabular}{ccc}
 \begin{tabular}[c]{@{}c@{}}Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
-\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
+\begin{tabular}[c]{@{}c@{}}\supname \\ Director del Trabajo Final\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\cosupname \\ Co-Director del Trabajo Final \end{tabular} \vspace{2.5cm} \\ 
+%\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
 %\begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
 %\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
 \end{tabular}
@@ -175,8 +177,8 @@ En la figura \ref{fig:diagHLSolucion} se presenta el diagrama a alto nivel de la
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
 Cliente       & Marleny López Machuca & Cliente particular	& -- 	\\ \hline
 Responsable   & \authorname       & FIUBA 			& Alumno 	\\ \hline
-Orientador    & Por definir       & Por definir  	& Director  \\ \hline %\pertesupname
-Colaborador   & Por definir       & Por definir     & Co-director \\ \hline
+Orientador    & \supname       & \pertesupname  	& Director  \\ \hline %\pertesupname
+Colaborador   & \cosupname       & \pertecosupname     & Co-director \\ \hline
 
 \end{tabularx}
 \end{table}
@@ -448,35 +450,39 @@ Los entregables del proyecto son:
 	\begin{enumerate}
 	\item Desarrollo front end (50 hs).
 	\item Desarrollo back end (60 hs).
-	\item Pruebas de aplicaciones (30 hs).
+	\item Pruebas unitarias de aplicación (30 hs).
 	\item Habilitación de infraestructura (10 hs).
 	\end{enumerate}
-\item \textbf{Desarrollo de sistema embebido: 180 hs}
+\item \textbf{Desarrollo de sistema embebido: 150 hs}
 	\begin{enumerate}
 	\item Desarrollo de algoritmo de medición de caudal de agua (50 hs).
 	\item Desarrollo de algoritmo de comunicaciones (40 hs).
-	\item Desarrollo de algoritmo de manejo de datos (40 hs).
 	\item Encapsulamiento de aplicación en contenedores (20 hs).
-	\item Corrección de errores (30 hr).
+	\item Pruebas unitarias de sistema embebido en dispositivo de telemetría (40 hs).
 	\end{enumerate}
-\item \textbf{Elaboración de documentación: 120 hs}
+\item \textbf{Integración y pruebas integrales: 70 hs}
+	\begin{enumerate}
+	\item Integración de componentes (40 hs).
+	\item Pruebas integrales de sistema y corrección de errores (30 hs).
+	\end{enumerate}
+\item \textbf{Elaboración de documentación: 100 hs}
 	\begin{enumerate}
 	\item Confección de memoria técnica (60 hs).
 	\item Informes de avance (20 hs).
 	\item Presentación de defensa (20 hs).
-	\item Encapsulamiento de aplicación en contenedores (20 hs).
 	\end{enumerate}
 \end{enumerate}
 
-\textbf{Cantidad total de horas: 610 hs}
+\textbf{Cantidad total de horas: 630 hs}
 
 \end{consigna}
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior. 
+\begin{consigna}{black}
+Se presenta el diagrama de \textit{Activity On Node} a partir del WBS definido en la etapa anterior. 
+Las unidades mostradas en la gráfica están expresadas en \textbf{horas}.
 
 %La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
 
@@ -484,17 +490,22 @@ Armar el AoN a partir del WBS definido en la etapa anterior.
 
 \end{consigna}
 
+%\begin{figure}[htpb]
+%\centering 
+%\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+%\caption{Diagrama en \textit{Activity on Node}}
+%\label{fig:AoN}
+%\end{figure}
+
+\begin{landscape}
+
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+\includegraphics[scale=.6]{./Figuras/TF_MonAgua_AoN.png} 
 \caption{Diagrama en \textit{Activity on Node}}
 \label{fig:AoN}
 \end{figure}
-
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
-
+\end{landscape}
 
 
 \section{11. Diagrama de Gantt}
