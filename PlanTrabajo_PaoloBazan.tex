@@ -24,7 +24,7 @@ codirector, % Uncomment to add a codirector to the title page
 \pertenenciaDirector{FIUBA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 \codirector{Ing. Ricardo Valega Márquez} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
-\pertenenciaCoDirector{FIUBA}
+\pertenenciaCoDirector{ID4}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Marleny López Machuca}
@@ -72,6 +72,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 1      & Se completa hasta el punto 1 inclusive                 & 04/11/2021 \\ \hline
 2      & Se completa hasta el punto 9 inclusive y correcciones de rev.1	& 11/11/2021 \\ \hline
 3      & Se completa hasta el punto 12 inclusive y correcciones de rev.2	& 21/11/2021 \\ \hline
+4      & Se completa hasta el punto 15 inclusive, correcciones de rev.3 y observaciones de directores	& 28/11/2021 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
@@ -126,16 +127,46 @@ En un estudio llevado a cabo por el Centro de Resiliencia de Estocolmo publicado
 
 Uno de estos parámetros es el uso del agua dulce. Si bien la Tierra tiene mucha agua, la gran parte es salada y solo el 2.5\% es dulce. Este porcentaje es cada vez menor por el cada vez mayor uso de la agricultura, que representa el 70\% del total de agua dulce. Por otro lado, esta tasa va incrementándose anualmente por el crecimiento poblacional. Por lo tanto, es indispensable promover una cultura de ahorro de este líquido vital.
 
-En las ciudades, con la complejidad de las redes urbanas de agua potable y la multiplicación de puntos de agua, también se incrementan las fugas por agrietamiento o rotura de las tuberías. Ante eventos de esta naturaleza, dependiendo de la magnitud de la fuga, si se tratara por ejemplo, de la rotura de la tubería alimentadora de una casa, la inundación será advertida rápidamente por sus residentes. Sin embargo, si las fugas fueran ligeras, será difícil tener una detección temprana. Por lo tanto, las acciones correctivas tomarán tiempo en ejecutarse.
+El mundo no está en camino de alcanzar el Objetivo de Desarrollo Sostenible núm. 6 sobre agua y saneamiento, fijado por la ONU en 2015. Existe una crisis mundial de agua.
 
-Para un mejor entendimiento, se puede hacer un cálculo sencillo para identificar la cantidad de agua que se podría desperdiciar en un hogar que tuviera un solo punto de agua defectuoso, y que pierda 30 gotas por minuto. Este ritmo podría pasar inadvertido por el propietario, pero sí se logrará perder alrededor de 43200 al día, lo que equivale a 10 litros. Anualizado este cálculo, se llega a 3650 litros al año de agua perdida.
+El artículo \textquotedblleft{Avances Climáticos: El camino al COP26 y más allá}\textquotedblright del \textit{World Economic Forum} señala algunos temas críticos al respecto:
+\begin{itemize}
+	\item En el ámbito humano y social, aproximadamente una de cada cuatro personas en el mundo no tiene acceso a agua potable administrada de forma segura en el hogar, y en solo unos pocos años aproximadamente dos tercios de la población mundial podrían enfrentar escasez de agua.
+	\item En el ámbito económico, hace referencia a un informe que menciona que la escasez de agua será la mayor amenaza relacionada con el clima para los activos corporativos como las fábricas en las próximas décadas.
+	\item La falta de agua está desencadenando conflictos violentos en distintas latitudes y creando nuevos migrantes y refugiados.
+\end{itemize}
+
+Según diversos artículos, existen seis causantes de la crisis mundial del agua:
+\begin{enumerate}
+\item Sobrepoblación
+\item Ganadería
+\item Cambio climático
+\item Agua contaminada
+\item Fugas
+\item Industria
+\end{enumerate}
+
+El enfoque del proyecto es atender la problemática de la quinta causal y cómo IoT puede contribuir a minimizar este aspecto. Como se resalta en la figura \ref{fig:WEFoum-Water-IoT} del \textit{World Economic Forum}, las tecnologías emergentes pueden ayudar a frenar el desperdicio de agua y monitorear mejor los sistemas de agua.
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=1\textwidth]{./Figuras/WEFoum-Water-IoT.png} 
+\caption{Diagrama del \textit{World Economic Forum} sobre los aspectos del agua en el mundo de hoy. Se hace énfasis en su relación de las tecnologías emergentes.}
+\label{fig:WEFoum-Water-IoT}
+\end{figure}
+
+\pagebreak 
+
+En las ciudades, con la complejidad de las redes urbanas de agua potable y la multiplicación de puntos de agua, también se incrementan las fugas por agrietamiento o rotura de las tuberías. Se estima que estos eventos representan un 20\% del agua perdida. Ante eventos de esta naturaleza, dependiendo de la magnitud de la fuga, si se tratara por ejemplo, de la rotura de la tubería alimentadora de una casa, la inundación será advertida rápidamente por sus residentes. Sin embargo, si las fugas fueran ligeras, será difícil tener una detección temprana. Por lo tanto, las acciones correctivas tomarán tiempo en ejecutarse.
+
+Para un mejor entendimiento, se puede hacer un cálculo sencillo para identificar la cantidad de agua que se podría desperdiciar en un hogar que tuviera un solo punto de agua defectuoso, y que pierda 30 gotas por minuto. Este ritmo podría pasar inadvertido por el propietario, pero sí logrará perder alrededor de 43200 gotas al día, lo que equivale a 10 litros. Anualizado este cálculo, se llega a 3650 litros al año de agua perdida.
 
 La necesidad principal a satisfacer en el mercado es la carencia de información en tiempo real que permita la rápida atención de fugas y prevenga el desperdicio de agua potable en los hogares u organizaciones.
 
 
 \textbf{Solución planteada en proyecto a realizar} 
 
-El proyecto busca construir un sistema que permita el control del consumo de agua potable y la detección de fugas en redes caseras o empresariales. 
+El proyecto busca construir un prototipo de sistema que permita el control del consumo de agua potable y la detección de fugas en redes caseras o residenciales. 
 
 El proyecto propuesto se abordará con un sensor inalámbrico de caudal de agua que permita la lectura del caudal que pasa por el punto monitoreado. Los datos deberán ser enviados a través del protocolo MQTT para su almacenamiento en una base de datos. En el frente de visualización de la información, se propone la creación de una aplicación que permita mostrar el flujo de agua en el punto monitoreado, así como su consumo acumulado durante un período de tiempo definido. 
 
@@ -196,7 +227,11 @@ Colaborador   & \cosupname       & \pertecosupname     & Co-director \\ \hline
 \section{3. Propósito del proyecto}
 \label{sec:proposito} 
 \begin{consigna}{black}
-El propósito de este proyecto es mejorar el conocimiento sobre sensorización de caudal de fluidos, específicamente de agua. Se busca ampliar el conocimiento en la integración de los componentes de medición, protocolos de comunicación y servicios de software que pongan en valor la información sobre el consumo de agua potable.
+El propósito del proyecto es la construcción de un prototipo de sistema que permita el control del consumo de agua potable y la detección de fugas en redes caseras o empresariales. 
+
+A través de una solución profesional, simple y práctica, se busca minimizar la falta de información en tiempo real de la pérdida de agua que existe en los hogares y eventualmente a industrias y otros sectores. Esto podrá contribuir, en algo, a la sensibilización de estas pérdidas del líquido vital.
+
+A nivel académico, el propósito es mejorar el conocimiento sobre sensorización de caudal de fluidos, específicamente de agua. Se busca ampliar el conocimiento en la integración de los componentes de medición, protocolos de comunicación y servicios de software que pongan en valor la información sobre el consumo de agua potable.
 \end{consigna}
 
 \section{4. Alcance del proyecto}
@@ -207,24 +242,16 @@ El propósito de este proyecto es mejorar el conocimiento sobre sensorización d
 El presente proyecto tiene como alcance:
 
 \begin{enumerate}
-\item Diseño, identificación e implementación de prototipo de solución de telemetría para medición de caudal de agua en una tubería residencial:
+\item Diseño, identificación e implementación de prototipo de solución de telemetría para medición de caudal de agua en una tubería residencial de hasta 1" de diámetro:
 \begin{itemize}
-	\item Basada en utilización de sensores de medición de caudal de agua con tecnología ultrasónica
-	\item Los sensores no serán instalados \textquotedblleft{en línea}\textquotedblright  en la tubería o cañería. Serán instalados de forma no intrusiva, sin intervenirla.
-	\item La comunicación hacia la solución de software será inalámbrica, utilizando preferentemente protocolo Wi-Fi.
+	\item Que esté basada en utilización de sensores de medición de caudal de agua con tecnología ultrasónica.
+	\item Donde los sensores no sean instalados \textquotedblleft{en línea}\textquotedblright  en la tubería o cañería, sino que sean instalados de forma no intrusiva, es decir, sin intervenirla.
+	\item En la que la comunicación hacia la solución de software sea inalámbrica, utilizando preferentemente protocolo Wi-Fi.
 \end{itemize}
 
-\item Diseño y construcción de prototipo de software para la captura y procesamiento de datos:
-\begin{itemize}
-	\item Estará basada en tecnología de contenedores.
-	\item Utilizará una base de datos relacional.
-\end{itemize}
+\item Diseño y construcción de un prototipo de software para la captura y procesamiento de datos que estará basado en tecnología de contenedores.
 
-\item Diseño y construcción de un prototipo de software front-end para la presentación de datos en tiempo real y de forma histórica:
-\begin{itemize}
-	\item Basado en framework Angular js.
-	\item Basado en lenguaje typescript.
-\end{itemize}
+\item Diseño y construcción de un prototipo de software front-end para la presentación de datos en tiempo real y de forma histórica.
 
 \end{enumerate}
 
@@ -236,7 +263,15 @@ El presente proyecto no incluye:
 	\item Gestión de analítica de datos.
 \end{itemize}
 
-
+\textbf{Beneficios.}  
+Los beneficios de este producto son:
+\begin{itemize}
+	\item Instrumento no intrusivo a la cañería.
+	\item Dispositivo ligero y manejable.
+	\item Rápida programación e instalación.
+	\item Amplia aplicación en cañerías hasta de 1" ubicables en distintos sectores.
+	\item Detección de flujo de agua consumido en tiempo real
+\end{itemize}
 \end{consigna}
 
 
@@ -249,9 +284,10 @@ Para el desarrollo del presente proyecto se supone que:
 \begin{itemize}
 	\item Se dispondrá de tiempo suficiente para el cumplimiento de los objetivos y entregables.
 	\item Se dispondrá de los recursos económicos suficientes para la adquición de los materiales necesarios para la construcción del prototipo y software asociado.
+	\item Se dispondrá de los recursos técnicos suficientes y oportunamente para la construcción del prototipo en tiempo y forma.
 	\item Se dispondrá de orientación oportuna por parte de todos los involucrados de acuerdo a su rol.
-	\item Los niveles de precisión de los dispositivos de telemetría elegidos están dentro del rango del 85\%.
-	\item Se dispondrá de red inalábrica Wi-Fi con nivel de recepción de señal aceptable (-60 dBm)
+	\item Los niveles de precisión de los dispositivos de telemetría elegidos están dentro del rango del 95\%.
+	\item Se dispondrá de red inalábrica Wi-Fi con nivel de recepción de señal aceptable (-60 dBm).
 \end{itemize}
 
 \end{consigna}
@@ -284,7 +320,7 @@ Los requerimientos del proyecto serán listados de acuerdo al siguiente criterio
 
 \item Requerimientos de interfases:
 	\begin{enumerate}
-		\item La aplicación debe funcionar en navegadores web Chrome y Mozilla.
+		\item La aplicación debe funcionar en los navegadores web Chrome y Mozilla.
 		\item La aplicación web debe funcionar de forma responsiva en dispositivos Android e iOS.
 		\item La aplicación web debe permitir el registro de ubicación del sensor y asociarla con la colección de datos.
 		\item La aplicación web debe mostrar el caudal de agua de cada sensor en tiempo real. 
@@ -294,9 +330,9 @@ Los requerimientos del proyecto serán listados de acuerdo al siguiente criterio
 
 \item Requerimientos de testing:
 	\begin{enumerate}
-		\item El aplicativo web tendrá banco de pruebas unitarias para aseguramiento de calidad y funcionamiento.
-		\item El dispositivo de telemetría tendrá banco de pruebas unitarias para aseguramiento de calidad y funcionamiento.
-		\item Sistema en general tendrá banco de pruebas integrables.
+		\item El aplicativo web tendrá un banco de pruebas unitarias para aseguramiento de calidad y funcionamiento.
+		\item El dispositivo de telemetría tendrá un banco de pruebas unitarias para aseguramiento de calidad y funcionamiento.
+		\item El sistema en general tendrá un banco de pruebas integrables.
 	\end{enumerate}
 
 \item Requerimientos de documentación:
@@ -304,11 +340,11 @@ Los requerimientos del proyecto serán listados de acuerdo al siguiente criterio
 		\item Documentación con arquitectura técnológica y funcional.
 		\item El sistema debe contar con documentación de cobertura de señal. 
 		\item El sistema debe incluir documentación con estudio de parámetro para medición de caudal de agua usando sensores ultrasónicos.
-		\item Desarrollo web deberá estar documentada bajo el método de anotaciones.
-		\item Documentación de plan de pruebas y resultados
-		\item Video demostrativo de uso del prototipo
-		\item Informe final
-		\item Las versiones de la documentación deberán estar controladas.
+		\item Desarrollo web deberá estar documentado bajo el método de anotaciones.
+		\item Documentación de plan de pruebas y resultados.
+		\item Video demostrativo de uso del prototipo.
+		\item Informe final.
+		\item Se utilizará un sistema de control de versiones.
 	\end{enumerate}
 
 \end{enumerate}
@@ -481,8 +517,16 @@ Los entregables del proyecto son:
 \label{sec:AoN}
 
 \begin{consigna}{black}
-Se presenta el diagrama de \textit{Activity On Node} a partir del WBS definido en la etapa anterior. 
-Las unidades mostradas en la gráfica están expresadas en \textbf{horas}.
+El proyecto tiene dos líneas de actividades paralelas, que son:
+\begin{itemize}
+		\item Actividades de planeamiento, diseño, desarrollo de aplicación web y back-end. 
+		\item Actividades asociadas a la investigación, adquisición de sensores y desarrollo del sistema embebido.
+\end{itemize}
+
+La ruta crítica incluye la primera línea de actividades, aquellas de mayor complejidad y dificultad, hasta el final del proyecto.
+
+Se presenta el diagrama de \textit{Activity On Node} a partir del WBS definido en la etapa anterior. Las unidades mostradas en la gráfica están expresadas en \textbf{horas}.
+
 
 %La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
 
@@ -502,7 +546,7 @@ Las unidades mostradas en la gráfica están expresadas en \textbf{horas}.
 \begin{figure}[htpb]
 \centering 
 \includegraphics[scale=.6]{./Figuras/TF_MonAgua_AoN.png} 
-\caption{Diagrama en \textit{Activity on Node}}
+\caption{Diagrama en \textit{Activity on Node}.}
 \label{fig:AoN}
 \end{figure}
 \end{landscape}
@@ -513,18 +557,23 @@ Las unidades mostradas en la gráfica están expresadas en \textbf{horas}.
 
 \begin{consigna}{black}
 
-A continuación se listan las actividades con las fechas de inicio y fin establecidas para el proyecto. Se tienen en cuenta las siguientes consideraciones:
+A continuación en la figura \ref{fig:ListaGantt} se listan las actividades con las fechas de inicio y fin establecidas para el proyecto. Se tienen en cuenta las siguientes consideraciones:
 
 \begin{itemize}
 		\item La asignación de un (01) recurso de tipo desarrollador.
 		\item El trabajo diario será de tres (03) horas por seis (06) días por semana.
 		\item Vacaciones desde el 15 de diciembre de 2021 al 28 de febrero de 2022 y desde el 11 al 22 de julio de 2022.
-	\end{itemize}
+\end{itemize}
 
-
+\begin{figure}[htpb]
+\centering 
 \includegraphics[scale=.7]{./Figuras/TF-gantt-lista.png} 
+\caption{Diagrama de listado de actividades.}
+\label{fig:ListaGantt}
+\end{figure}
 
-En la figura \ref{fig:diagGantt}, se muestra el de diagrama de gantt realizado para el proyecto.
+
+En las figuras \ref{fig:diagGantt1} y \ref{fig:diagGantt2} se muestra el diagrama de Gantt realizado para el proyecto.
 %con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
 
 %\begin{figure}[htbp]
@@ -546,15 +595,22 @@ En la figura \ref{fig:diagGantt}, se muestra el de diagrama de gantt realizado p
 %\end{figure}
 
 
-\begin{landscape}
+%\begin{landscape}
 \begin{figure}[htpb]
 \centering 
-\includegraphics[height=.85\textheight]{./Figuras/TF-gantt.png}
-\caption{Diagrama de Gantt}
-\label{fig:diagGantt}
+\includegraphics[height=.7\textheight]{./Figuras/TF-gantt1.png}
+\caption{Diagrama de Gantt: octubre 2021 - mayo 2022.}
+\label{fig:diagGantt1}
 \end{figure}
 
-\end{landscape}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[height=.7\textheight]{./Figuras/TF-gantt2.png}
+\caption{Diagrama de Gantt: mayo - diciembre 2022.}
+\label{fig:diagGantt2}
+\end{figure}
+
+%\end{landscape}
 
 \end{consigna}
 
@@ -563,7 +619,7 @@ En la figura \ref{fig:diagGantt}, se muestra el de diagrama de gantt realizado p
 \label{sec:presupuesto}
 
 \begin{consigna}{black}
-Se presenta el presupuesto del proyecto. Está expresado en dólares americanos (USD).
+Se presenta el presupuesto del proyecto. Está expresado en dólares americanos (USD). Cotización del 21/11: \$100.58
 
 \end{consigna}
 
@@ -618,63 +674,111 @@ Descripción &
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
- 
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+\begin{consigna}{black}
+En esta sección se identificarán y evaluarán los riesgos del proyecto. La escala de medición será del 1 al 10:
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
+	\item Severidad (S): mientras más severo, más alto es el número.\\
+	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número.\\
 \end{itemize}   
 
-Riesgo 2:
+
+a) Identificación de los riesgos y estimación de sus consecuencias:
+ 
+Riesgo 1: No contar oportunamente con componentes de hardware necesarios.
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad (S): 10
+	Retraso de llegada de componentes alterará cronograma establecido.
+	\item Probabilidad de ocurrencia (O): 7
+	Es variable, pero situación actual mundial de comercio puede traer retrasos en la entrega de componentes.
+\end{itemize}   
+
+Riesgo 2: Errónea elección de sensores ultrasónicos.
+\begin{itemize}
+	\item Severidad (S): 10
+	Retraso de llegada de componentes correctos alterará cronograma establecido.
+	\item Ocurrencia (O): 4
+	Es baja, ya que se verificarán las especificaciones técnicas disponibles para correcta elección.
 \end{itemize}
 
-Riesgo 3:
+Riesgo 3: Imposibilidad o alta complejidad de programación de los sensores ultrasónicos.
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad (S): 10
+	La alta complejidad de programación acarreará la nueva elección de componentes y retraso en el cronograma establecido.
+	\item Ocurrencia (O): 6
+	Documentación disponible podría no contemplar alcance de programación en los dispositivos.
+\end{itemize}
+
+Riesgo 4: Bajo nivel de soporte para desarrollo de algoritmos de detección de flujo de agua.
+\begin{itemize}
+	\item Severidad (S): 5
+	Aunque impactará uno de los requerimientos, se necesitará buscar alternativas para replantear algoritmos y/o la elección de nuevo dispositivo más fiable.
+	\item Ocurrencia (O): 4
+	Para la elección de dispositivos se tomará en cuenta nivel de precisión de acuerdo a los requerimientos fijados. En las pruebas unitarias deberá evaluarse si algoritmos aplicados permiten una correcta precisión.
+\end{itemize}
+
+Riesgo 5: Fallo de dispositivos de hardware por mala manipulación.
+\begin{itemize}
+	\item Severidad (S): 10
+	Fallo por manipulación impactará actividades donde se necesitará de estos dispositivos, tanto en el desarrollo, en las pruebas e integración del sistema.
+	\item Ocurrencia (O): 4
+	Solo una persona tendrá acceso a los dispositivos y se tomarán medidas para evitar fallo por descargas electroestáticas.
+\end{itemize}
+
+Riesgo 6: Estimación incorrecta de tiempo de desarrollo de aplicaciones.
+\begin{itemize}
+	\item Severidad (S): 9
+	Afectación importante por retrasos en cualquiera de las actividades de la ruta crítica.
+	\item Ocurrencia (O): 10
+	Inexperiencia en desarrollo de aplicaciones y el poco tiempo disponible incrementan la probabilidad de ocurrencia de este riesgo.
 \end{itemize}
 
 
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+
+b) Tabla de gestión de riesgos:      
+
+Para el cálculo de la gestión de riesgos, se calculará el RPN (número de prioridad de riesgo) a partir de la multiplicación de los números dados en la severidad y la ocurrencia. El RPN se calcula como RPN=SxO
 
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+Riesgo & S & O & RPN &	 S* & O* & RPN* \\ \hline
+1: No contar oportunamente con componentes de hardware necesarios   & 10  &  7 & \cellcolor{red}{70}  &  3  & 6   & 18     \\ \hline
+2: Errónea elección de sensores ultrasónicos       & 10  &  4 & 40    &  -  &  -  &  -    \\ \hline
+3: Imposibilidad o alta complejidad de programación de los sensores ultrasónicos       & 10  &  6 & \cellcolor{red}{60}  & 10   & 4   & 40     \\ \hline
+4: Bajo nivel de soporte para desarrollo de algoritmos de detección de flujo de agua       &  5 & 4  & 20  & -   & -   & -     \\ \hline
+5: Fallo de dispositivos de hardware por mala manipulación       & 10  & 4  & 40    & -   & -   & -     \\ \hline
+6: Estimación incorrecta de tiempo de desarrollo de aplicaciones       &  9   & 10  & \cellcolor{red}{90}    & 5   & 8   & 40     \\ \hline
 \end{tabularx}%
 \end{table}
 
 Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 50.
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
-
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Se mostrarán los planes de mitigación en los riesgos 1, 3 y 6. 
  
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 1: Evaluar y adquirir lo antes posible los dispositivos necesarios, para aprovechar tiempos de receso de fin de año y vacaciones. \\
+  - Severidad (S): 3. \\
+	Llegada oportuna de componentes no afectan actividades del cronograma. \\
+  - Probabilidad de ocurrencia (O): 6 \\
+	Riesgo es mitigado con tiempo de anticipación de la compra. \\
+
+Riesgo 3: Revisión de reseñas y alternativa de llevar programación a dispositivo Raspberry. \\
+  - Severidad (S): 10. \\
+	Se mantiene igual. La alta complejidad de programación acarreará la nueva elección de componentes y retraso en el cronograma establecido. \\
+  - Probabilidad de ocurrencia (O): 4 \\
+	Evaluación de capacidad de programación en dispositivo deberá reducir riesgo. \\
+
+Riesgo 6: Solicitud de apoyo con recurso alterno para cerrar brechas de programación. \\ 
+  - Severidad (S): 9. \\
+	Se mantiene igual. Inexperiencia en desarrollo de aplicaciones y el poco tiempo disponible incrementan la probabilidad de ocurrencia de este riesgo. \\
+  - Probabilidad de ocurrencia (O): 4 \\
+	Contar con respaldo para avance de actividad reduce la probabilidad de ocurrencia. \\
 
 \end{consigna}
 
@@ -682,35 +786,177 @@ Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Para cada uno de los requerimientos del proyecto indique:
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
+\begin{consigna}{black}
+Para cada uno de los requerimientos del proyecto se indica la verificación y validación correspondientes:
 
-\begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
-\end{itemize}
+\begin{enumerate}
+\item Requerimientos funcionales:
+	\begin{enumerate}
+		\item La conexión de los dispositivos debe ser de forma inalámbrica.
+			\begin{itemize}
+				\item Verificación técnica de conectividad con dirección MAC registrada en AP usando protocolo WiFi. 
+				\item Validación con el cliente con conexión de dispositivo a red inalámbrica.
+			\end{itemize}
+		\item Los dispositivos de medición de caudal de agua deberán usar tecnología ultrasónica.
+			\begin{itemize}
+				\item Verificación de especificaciones técnicas de dispositivo. 
+				\item Validación de referencia de caja o afiche comercial de dispositivo con mención a dicha tecnología.  
+			\end{itemize}
+		\item El sistema debe atender las salidas de agua de servicios higiénicos y/o de tuberías de hasta 1".
+			\begin{itemize}
+				\item Verificación de especificaciones técnicas de dispositivo.  
+				\item Validación con el cliente para confirmar que dispositivo soporta conectarse a tuberías hasta de dicho diámetro.
+			\end{itemize}
+		\item La transmisión de datos debe ser ligera y debe consumir baja energía. 
+			\begin{itemize}
+				\item Verificación de especificaciones técnicas de dispositivo y/o medición de tráfico usando algún capturador de paquetes. 
+				\item Validación con el cliente de confirmación con especialista. 
+			\end{itemize}
+		\item El software embebido debe poder encapsularse en un contenedor docker.
+			\begin{itemize}
+				\item Verificación técnica de archivo de configuración docker. 
+				\item Validación con el cliente de poder ejecutar la lógica en un solo contenedor.
+			\end{itemize}
+		\item El sistema debe incluir notificaciones que permitan alertar a usuarios de la alteración del caudal cuando supere el 10\% al promedio histórico.	
+			\begin{itemize}
+				\item Verificación en simulación de evento de superación de umbral. 
+				\item Validación con el cliente de llegada de notificación. 
+			\end{itemize}
+		\item Los sensores deberán conectarse a una red de forma predeterminada.	
+			\begin{itemize}
+				\item Verificación técnica que sensor tiene configuración predeterminada activa en settings del dispositivo. 
+				\item Validación con el cliente de que dispositivo no pregunta a qué red conectarse. 
+			\end{itemize}
+		\item Opcionalmente, el sistema debe tener capacidad portátil para conexión de datos, alimentación eléctrica e instalación de plomería.
+			\begin{itemize}
+				\item Verificación de especificaciones técnicas de todas o algunas de los requerimientos opcionales. 
+				\item Validación de portabilidad de dispositivo.  
+			\end{itemize}
+		\item Opcionalmente, el sistema debe adecuarse a los lineamientos establecidos en la ISO 30141:2018.
+			\begin{itemize}
+				\item Verificación de documentación del proyecto que haga referencia a la ISO. 
+				\item Validación en documentación de ISO de las referencias mencionadas.
+			\end{itemize}
+	\end{enumerate}
 
-\end{itemize}
+\item Requerimientos de interfases:
+	\begin{enumerate}
+		\item La aplicación debe funcionar en los navegadores web Chrome y Mozilla.
+			\begin{itemize}
+				\item Verificación de la ejecución de la aplicación en una computadora usada en el proyecto con ambos navegadores.
+				\item Validación con el cliente para confirmar compatibilidad en una computadora de terceros. 
+			\end{itemize}
+		\item La aplicación web debe funcionar de forma responsiva en dispositivos Android e iOS.
+			\begin{itemize}
+				\item Verificación de la ejecución de la aplicación en simuladores de Android y iOS.
+				\item Validación con el cliente para confirmar compatibilidad en su celular del cliente. 
+			\end{itemize}
+		\item La aplicación web debe permitir el registro de ubicación del sensor y asociarla con la colección de datos.
+			\begin{itemize}
+				\item Verificación de query con id de sensor, sus ubicaciones y los datos capturados en la BD.
+				\item Validación con el cliente para visualizar los registros de ubicación del sensor y sus datos. Puede ser un mismo sensor.
+			\end{itemize}
+		\item La aplicación web debe mostrar el caudal de agua de cada sensor en tiempo real. 
+			\begin{itemize}
+				\item Verificación expresada en texto indicando los metros cúbicos por minuto que pasó por dicho sensor.
+				\item Validación con el cliente de encendido/apagado de caudal que permita sensar el caudal.  
+			\end{itemize}
+		\item La aplicación web debe mostrar el caudal histórico de cada sensor y el promedio de los últimos 7 días.
+			\begin{itemize}
+				\item Verificación de query con id de sensor, sus ubicaciones y los datos capturados en la BD.
+				\item Validación con el cliente para visualizar los registros de ubicación del sensor y sus datos. Puede ser un mismo sensor.
+			\end{itemize}
+		\item Opcionalmente, el sistema tendrá control de accesos configurable.
+			\begin{itemize}
+				\item Verificación de registro de usuario nuevo 
+				\item Validación con el cliente para logueo con dos usuarios diferentes.
+			\end{itemize}
+	\end{enumerate}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
+\item Requerimientos de testing:
+	\begin{enumerate}
+		\item El aplicativo web tendrá un banco de pruebas unitarias para aseguramiento de calidad y funcionamiento.
+			\begin{itemize}
+				\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente.
+				\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. 
+			\end{itemize}
+		\item El dispositivo de telemetría tendrá un banco de pruebas unitarias para aseguramiento de calidad y funcionamiento.
+			\begin{itemize}
+				\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. 
+				\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido.  
+			\end{itemize}
+		\item El sistema en general tendrá un banco de pruebas integrables.
+			\begin{itemize}
+				\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. 
+				\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. 
+			\end{itemize}
+	\end{enumerate}
+
+\item Requerimientos de documentación:
+	\begin{enumerate}
+		\item Documentación con arquitectura técnológica y funcional.
+			\begin{itemize}
+				\item Verificación de documentación de arquitectura.
+				\item Validación con el cliente para confirmar que documentación fue entregada.
+			\end{itemize}
+		\item El sistema debe contar con documentación de cobertura de señal. 
+			\begin{itemize}
+				\item Verificación de cálculo de espectro de señal 
+				\item Validación con el cliente para confirmar que documentación fue entregada. 
+			\end{itemize}
+		\item El sistema debe incluir documentación con estudio de parámetro para medición de caudal de agua usando sensores ultrasónicos.
+			\begin{itemize}
+				\item Verificación de cálculo de medición de caudal. 
+				\item Validación con el cliente para confirmar que documentación fue entregada. 
+			\end{itemize}
+		\item Desarrollo web deberá estar documentado bajo el método de anotaciones.
+			\begin{itemize}
+				\item Verificación en código de aplicación de algunas anotacion 
+				\item Validación con el cliente para confirmar que documentación fue entregada. 
+			\end{itemize}
+		\item Documentación de plan de pruebas y resultados.
+			\begin{itemize}
+				\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. 
+				\item Validación con el cliente para confirmar que documentación fue entregada. 
+			\end{itemize}
+		\item Video demostrativo de uso del prototipo.
+			\begin{itemize}
+				\item Verificación de inclusión de casos de uso registrados. 
+				\item Validación con el cliente para confirmar que en video se cumple requerimientos funcionales. 
+			\end{itemize}
+		\item Informe final.
+			\begin{itemize}
+				\item Verificación para confirmar si se cumplió con lo requerido. 
+				\item Validación con el cliente para confirmar que documentación fue entregada. 
+			\end{itemize}
+		\item Se utilizará un sistema de control de versiones.
+			\begin{itemize}
+				\item Verificación y descarga de una versión anterior a vigente.
+				\item Validación con el cliente para confirmar que archivo fue descargado.
+			\end{itemize}
+	\end{enumerate}
+
+\end{enumerate}
 
 \end{consigna}
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+\begin{consigna}{black}
+Durante la etapa de cierre se llevará a cabo una reunión donde se presentará al cliente, directores y jurado, los siguientes puntos:
 
 \begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-	  - Indicar esto y quién financiará los gastos correspondientes.
+	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original: \\
+	 - A cargo de Paolo Bazán.  \\
+	 - Se mencionarán las desviaciones ocurridas durante el proyecto y las actividades realizadas para su corrección al plan. \\
+	 - Se analizará los motivos de estas desviaciones ocurridas. \\
+	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron: \\
+	 - A cargo de Paolo Bazán.  \\
+	 - Se deberá documentar durante el proyecto de las herramientas, técnicas, tácticas empleadas para evaluar su continuidad en siguientes proyectos. \\
+	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores: \\
+	 - A cargo de Paolo Bazán. \\
+	 - Se procederá con protocolo de cierre, agradeciendo a todos los participantes su contribución de esfuerzo y tiempo. \\
 \end{itemize}
 
 \end{consigna}
