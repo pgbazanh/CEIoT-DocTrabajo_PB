@@ -73,6 +73,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 2      & Se completa hasta el punto 9 inclusive y correcciones de rev.1	& 11/11/2021 \\ \hline
 3      & Se completa hasta el punto 12 inclusive y correcciones de rev.2	& 21/11/2021 \\ \hline
 4      & Se completa hasta el punto 15 inclusive, correcciones de rev.3 y observaciones de directores	& 28/11/2021 \\ \hline
+5      & Se completa correcciones de rev.4 	& 03/12/2021 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
@@ -129,7 +130,8 @@ Uno de estos parámetros es el uso del agua dulce. Si bien la Tierra tiene mucha
 
 El mundo no está en camino de alcanzar el Objetivo de Desarrollo Sostenible núm. 6 sobre agua y saneamiento, fijado por la ONU en 2015. Existe una crisis mundial de agua.
 
-El artículo \textquotedblleft{Avances Climáticos: El camino al COP26 y más allá}\textquotedblright del \textit{World Economic Forum} señala algunos temas críticos al respecto:
+
+El artículo ''Avances Climáticos: el camino al COP26 y más allá'' del \textit{World Economic Forum} señala algunos temas críticos al respecto:
 \begin{itemize}
 	\item En el ámbito humano y social, aproximadamente una de cada cuatro personas en el mundo no tiene acceso a agua potable administrada de forma segura en el hogar, y en solo unos pocos años aproximadamente dos tercios de la población mundial podrían enfrentar escasez de agua.
 	\item En el ámbito económico, hace referencia a un informe que menciona que la escasez de agua será la mayor amenaza relacionada con el clima para los activos corporativos como las fábricas en las próximas décadas.
@@ -242,7 +244,7 @@ A nivel académico, el propósito es mejorar el conocimiento sobre sensorizació
 El presente proyecto tiene como alcance:
 
 \begin{enumerate}
-\item Diseño, identificación e implementación de prototipo de solución de telemetría para medición de caudal de agua en una tubería residencial de hasta 1" de diámetro:
+\item Diseño, identificación e implementación de prototipo de solución de telemetría para medición de caudal de agua en una tubería residencial de hasta 1'' de diámetro:
 \begin{itemize}
 	\item Que esté basada en utilización de sensores de medición de caudal de agua con tecnología ultrasónica.
 	\item Donde los sensores no sean instalados \textquotedblleft{en línea}\textquotedblright  en la tubería o cañería, sino que sean instalados de forma no intrusiva, es decir, sin intervenirla.
@@ -525,7 +527,7 @@ El proyecto tiene dos líneas de actividades paralelas, que son:
 
 La ruta crítica incluye la primera línea de actividades, aquellas de mayor complejidad y dificultad, hasta el final del proyecto.
 
-Se presenta el diagrama de \textit{Activity On Node} a partir del WBS definido en la etapa anterior. Las unidades mostradas en la gráfica están expresadas en \textbf{horas}.
+Se presenta el diagrama de \textit{Activity On Node} a partir del WBS definido en la etapa anterior. Las unidades mostradas en la gráfica están expresadas en \textbf{horas} y la ruta crítica se muestra con las flechas azules.
 
 
 %La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
@@ -619,7 +621,7 @@ En las figuras \ref{fig:diagGantt1} y \ref{fig:diagGantt2} se muestra el diagram
 \label{sec:presupuesto}
 
 \begin{consigna}{black}
-Se presenta el presupuesto del proyecto. Está expresado en dólares americanos (USD). Cotización del 21/11: \$100.58
+Se presenta el presupuesto del proyecto. Está expresado en dólares americanos (USD). Cotización del 21/11: \$100.58.
 
 \end{consigna}
 
@@ -684,59 +686,59 @@ En esta sección se identificarán y evaluarán los riesgos del proyecto. La esc
 
 a) Identificación de los riesgos y estimación de sus consecuencias:
  
-Riesgo 1: No contar oportunamente con componentes de hardware necesarios.
+Riesgo 1: no contar oportunamente con componentes de hardware necesarios.
 \begin{itemize}
-	\item Severidad (S): 10
+	\item Severidad (S): 10. \\
 	Retraso de llegada de componentes alterará cronograma establecido.
-	\item Probabilidad de ocurrencia (O): 7
-	Es variable, pero situación actual mundial de comercio puede traer retrasos en la entrega de componentes.
+	\item Probabilidad de ocurrencia (O): 7. \\
+	Es variable, debido a la situación actual en el mundo pueden ocurrir retrasos en la entrega de componentes, y por lo tanto la probabilidad de ocurrencia es elevada.
 \end{itemize}   
 
-Riesgo 2: Errónea elección de sensores ultrasónicos.
+Riesgo 2: errónea elección de sensores ultrasónicos.
 \begin{itemize}
-	\item Severidad (S): 10
-	Retraso de llegada de componentes correctos alterará cronograma establecido.
-	\item Ocurrencia (O): 4
-	Es baja, ya que se verificarán las especificaciones técnicas disponibles para correcta elección.
+	\item Severidad (S): 10. \\
+	Implica un trabajo de menor calidad o tener que realizar una nueva búsqueda de sensores y por consiguiente una demora en el cronograma establecido.
+	\item Ocurrencia (O): 4. \\
+	Es baja, ya que se verificarán las especificaciones técnicas disponibles para la correcta elección.
 \end{itemize}
 
-Riesgo 3: Imposibilidad o alta complejidad de programación de los sensores ultrasónicos.
+Riesgo 3: imposibilidad o alta complejidad de programación de los sensores ultrasónicos.
 \begin{itemize}
-	\item Severidad (S): 10
-	La alta complejidad de programación acarreará la nueva elección de componentes y retraso en el cronograma establecido.
-	\item Ocurrencia (O): 6
-	Documentación disponible podría no contemplar alcance de programación en los dispositivos.
+	\item Severidad (S): 10. \\
+	La alta complejidad de programación acarreará la nueva elección de componentes y el consecuente retraso en el cronograma establecido.
+	\item Ocurrencia (O): 6. \\
+	La documentación disponible de los dispositivos adquiridos podría no contemplar métodos de programación soportados por estos.
 \end{itemize}
 
-Riesgo 4: Bajo nivel de soporte para desarrollo de algoritmos de detección de flujo de agua.
+Riesgo 4: bajo nivel de soporte para desarrollo de algoritmos de detección de flujo de agua.
 \begin{itemize}
-	\item Severidad (S): 5
-	Aunque impactará uno de los requerimientos, se necesitará buscar alternativas para replantear algoritmos y/o la elección de nuevo dispositivo más fiable.
-	\item Ocurrencia (O): 4
-	Para la elección de dispositivos se tomará en cuenta nivel de precisión de acuerdo a los requerimientos fijados. En las pruebas unitarias deberá evaluarse si algoritmos aplicados permiten una correcta precisión.
+	\item Severidad (S): 5. \\
+	Implica la búsqueda de nuevas alternativas para replantear algoritmos y/o la elección de nuevo dispositivo más fiable.
+	\item Ocurrencia (O): 4. \\
+	Para la elección de los dispositivos se tomará en cuenta el nivel de precisión de acuerdo a los requerimientos fijados. En las pruebas unitarias deberá evaluarse si los algoritmos aplicados permiten una correcta precisión.
 \end{itemize}
 
-Riesgo 5: Fallo de dispositivos de hardware por mala manipulación.
+Riesgo 5: fallo de dispositivos de hardware por mala manipulación.
 \begin{itemize}
-	\item Severidad (S): 10
-	Fallo por manipulación impactará actividades donde se necesitará de estos dispositivos, tanto en el desarrollo, en las pruebas e integración del sistema.
-	\item Ocurrencia (O): 4
+	\item Severidad (S): 10. \\
+	La incorrecta manipulación del dispositivo que ocasione su falla impactará actividades por nueva adquisición de este y retrasará el cronograma establecido.
+	\item Ocurrencia (O): 4. \\
 	Solo una persona tendrá acceso a los dispositivos y se tomarán medidas para evitar fallo por descargas electroestáticas.
 \end{itemize}
 
-Riesgo 6: Estimación incorrecta de tiempo de desarrollo de aplicaciones.
+Riesgo 6: estimación incorrecta de tiempo de desarrollo de aplicaciones.
 \begin{itemize}
-	\item Severidad (S): 9
-	Afectación importante por retrasos en cualquiera de las actividades de la ruta crítica.
-	\item Ocurrencia (O): 10
-	Inexperiencia en desarrollo de aplicaciones y el poco tiempo disponible incrementan la probabilidad de ocurrencia de este riesgo.
+	\item Severidad (S): 9. \\
+	Implica la no entrega del proyecto a tiempo.
+	\item Ocurrencia (O): 10. \\
+	Inexperiencia en desarrollo de aplicaciones y el poco tiempo disponible incrementan la probabilidad de ocurrencia.
 \end{itemize}
 
 
 
 b) Tabla de gestión de riesgos:      
 
-Para el cálculo de la gestión de riesgos, se calculará el RPN (número de prioridad de riesgo) a partir de la multiplicación de los números dados en la severidad y la ocurrencia. El RPN se calcula como RPN=SxO
+En la gestión de riesgos, se calculará el RPN (número de prioridad de riesgo) a partir de la multiplicación de los números dados en la severidad y la ocurrencia. El RPN se formula como RPN=SxO
 
 \begin{table}[htpb]
 \centering
@@ -760,23 +762,23 @@ Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplic
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Se mostrarán los planes de mitigación en los riesgos 1, 3 y 6. 
+Se mostrarán los planes de mitigación de los riesgos 1, 3 y 6. 
  
-Riesgo 1: Evaluar y adquirir lo antes posible los dispositivos necesarios, para aprovechar tiempos de receso de fin de año y vacaciones. \\
+Riesgo 1: evaluar y adquirir lo antes posible los dispositivos necesarios para tenerlos oportunamente considerando el tiempo de transporte. \\
   - Severidad (S): 3. \\
-	Llegada oportuna de componentes no afectan actividades del cronograma. \\
+	Retraso de llegada de componentes alterará cronograma establecido. \\
   - Probabilidad de ocurrencia (O): 6 \\
 	Riesgo es mitigado con tiempo de anticipación de la compra. \\
 
-Riesgo 3: Revisión de reseñas y alternativa de llevar programación a dispositivo Raspberry. \\
+Riesgo 3: revisión de reseñas y alternativa de implementar el sistema en un dispositivo de la familia Raspberry. \\
   - Severidad (S): 10. \\
 	Se mantiene igual. La alta complejidad de programación acarreará la nueva elección de componentes y retraso en el cronograma establecido. \\
   - Probabilidad de ocurrencia (O): 4 \\
 	Evaluación de capacidad de programación en dispositivo deberá reducir riesgo. \\
 
-Riesgo 6: Solicitud de apoyo con recurso alterno para cerrar brechas de programación. \\ 
+Riesgo 6: solicitud de apoyo con recurso alterno para cerrar brechas de programación. \\ 
   - Severidad (S): 9. \\
-	Se mantiene igual. Inexperiencia en desarrollo de aplicaciones y el poco tiempo disponible incrementan la probabilidad de ocurrencia de este riesgo. \\
+	Se mantiene igual. Implica la no entrega del proyecto a tiempo. \\
   - Probabilidad de ocurrencia (O): 4 \\
 	Contar con respaldo para avance de actividad reduce la probabilidad de ocurrencia. \\
 
@@ -787,7 +789,7 @@ Riesgo 6: Solicitud de apoyo con recurso alterno para cerrar brechas de programa
 \label{sec:calidad}
 
 \begin{consigna}{black}
-Para cada uno de los requerimientos del proyecto se indica la verificación y validación correspondientes:
+Para cada uno de los requerimientos del proyecto se indican la verificación y validación correspondientes:
 
 \begin{enumerate}
 \item Requerimientos funcionales:
@@ -849,12 +851,12 @@ Para cada uno de los requerimientos del proyecto se indica la verificación y va
 		\item La aplicación web debe funcionar de forma responsiva en dispositivos Android e iOS.
 			\begin{itemize}
 				\item Verificación de la ejecución de la aplicación en simuladores de Android y iOS.
-				\item Validación con el cliente para confirmar compatibilidad en su celular del cliente. 
+				\item Validación con el cliente para confirmar compatibilidad en el celular del cliente. 
 			\end{itemize}
 		\item La aplicación web debe permitir el registro de ubicación del sensor y asociarla con la colección de datos.
 			\begin{itemize}
 				\item Verificación de query con id de sensor, sus ubicaciones y los datos capturados en la BD.
-				\item Validación con el cliente para visualizar los registros de ubicación del sensor y sus datos. Puede ser un mismo sensor.
+				\item Validación con el cliente para visualizar los registros de ubicación del sensor y sus datos. 
 			\end{itemize}
 		\item La aplicación web debe mostrar el caudal de agua de cada sensor en tiempo real. 
 			\begin{itemize}
@@ -864,11 +866,11 @@ Para cada uno de los requerimientos del proyecto se indica la verificación y va
 		\item La aplicación web debe mostrar el caudal histórico de cada sensor y el promedio de los últimos 7 días.
 			\begin{itemize}
 				\item Verificación de query con id de sensor, sus ubicaciones y los datos capturados en la BD.
-				\item Validación con el cliente para visualizar los registros de ubicación del sensor y sus datos. Puede ser un mismo sensor.
+				\item Validación con el cliente para visualizar los registros de ubicación del sensor y sus datos. 
 			\end{itemize}
 		\item Opcionalmente, el sistema tendrá control de accesos configurable.
 			\begin{itemize}
-				\item Verificación de registro de usuario nuevo 
+				\item Verificación de registro de usuario nuevo. 
 				\item Validación con el cliente para logueo con dos usuarios diferentes.
 			\end{itemize}
 	\end{enumerate}
@@ -901,38 +903,38 @@ Para cada uno de los requerimientos del proyecto se indica la verificación y va
 			\end{itemize}
 		\item El sistema debe contar con documentación de cobertura de señal. 
 			\begin{itemize}
-				\item Verificación de cálculo de espectro de señal 
-				\item Validación con el cliente para confirmar que documentación fue entregada. 
+				\item Verificación de cálculo del espectro de señal. 
+				\item Validación con el cliente para confirmar que la documentación fue entregada. 
 			\end{itemize}
-		\item El sistema debe incluir documentación con estudio de parámetro para medición de caudal de agua usando sensores ultrasónicos.
+		\item El sistema debe incluir documentación con estudio de parámetros para medición de caudal de agua usando sensores ultrasónicos.
 			\begin{itemize}
-				\item Verificación de cálculo de medición de caudal. 
-				\item Validación con el cliente para confirmar que documentación fue entregada. 
+				\item Verificación del cálculo de medición de caudal. 
+				\item Validación con el cliente para confirmar que la documentación fue entregada. 
 			\end{itemize}
 		\item Desarrollo web deberá estar documentado bajo el método de anotaciones.
 			\begin{itemize}
-				\item Verificación en código de aplicación de algunas anotacion 
+				\item Verificación en código de aplicación de algunas anotaciones. 
 				\item Validación con el cliente para confirmar que documentación fue entregada. 
 			\end{itemize}
 		\item Documentación de plan de pruebas y resultados.
 			\begin{itemize}
 				\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. 
-				\item Validación con el cliente para confirmar que documentación fue entregada. 
+				\item Validación con el cliente para confirmar que la documentación fue entregada. 
 			\end{itemize}
 		\item Video demostrativo de uso del prototipo.
 			\begin{itemize}
 				\item Verificación de inclusión de casos de uso registrados. 
-				\item Validación con el cliente para confirmar que en video se cumple requerimientos funcionales. 
+				\item Validación con el cliente para confirmar que en video se cumple con los requerimientos funcionales. 
 			\end{itemize}
 		\item Informe final.
 			\begin{itemize}
 				\item Verificación para confirmar si se cumplió con lo requerido. 
-				\item Validación con el cliente para confirmar que documentación fue entregada. 
+				\item Validación con el cliente para confirmar que la documentación fue entregada. 
 			\end{itemize}
 		\item Se utilizará un sistema de control de versiones.
 			\begin{itemize}
-				\item Verificación y descarga de una versión anterior a vigente.
-				\item Validación con el cliente para confirmar que archivo fue descargado.
+				\item Verificación y descarga de una versión anterior a la vigente.
+				\item Validación con el cliente para confirmar que el archivo fue descargado.
 			\end{itemize}
 	\end{enumerate}
 
@@ -949,12 +951,12 @@ Durante la etapa de cierre se llevará a cabo una reunión donde se presentará 
 \begin{itemize}
 	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original: \\
 	 - A cargo de Paolo Bazán.  \\
-	 - Se mencionarán las desviaciones ocurridas durante el proyecto y las actividades realizadas para su corrección al plan. \\
-	 - Se analizará los motivos de estas desviaciones ocurridas. \\
+	 - Se mencionarán las desviaciones ocurridas durante el proyecto y las actividades realizadas para su corrección. \\
+	 - Se analizarán los motivos de estas desviaciones ocurridas. \\
 	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron: \\
 	 - A cargo de Paolo Bazán.  \\
-	 - Se deberá documentar durante el proyecto de las herramientas, técnicas, tácticas empleadas para evaluar su continuidad en siguientes proyectos. \\
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores: \\
+	 - Se deberán documentar durante el proyecto las herramientas y técnicas empleadas para evaluar su reusabilidad en siguientes proyectos. \\
+	\item Organizar el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores: \\
 	 - A cargo de Paolo Bazán. \\
 	 - Se procederá con protocolo de cierre, agradeciendo a todos los participantes su contribución de esfuerzo y tiempo. \\
 \end{itemize}
